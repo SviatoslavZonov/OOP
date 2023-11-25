@@ -14,12 +14,12 @@ class Student:
         for i in self.grades:
             grades_count += len(self.grades[i])
         self.average_rating = sum(map(sum, self.grades.values())) / grades_count
-        res = f'Имя: {self.name}\n' \
+        result_ = f'Имя: {self.name}\n' \
               f'Фамилия: {self.surname}\n' \
               f'Средняя оценка за домашнее задание: {self.average_rating}\n' \
               f'Курсы в процессе обучения: {courses_in_progress_str}\n' \
               f'Завершенные курсы: {finished_courses_str}'
-        return res
+        return result_
 
     def rate_hw(self, lecturer, course, grade):
         if isinstance(lecturer, Lecturer) and course in self.courses_in_progress and course in lecturer.courses_attached:
@@ -55,8 +55,6 @@ class Lecturer(Mentor):
         self.average_rating = sum(map(sum, self.grades.values())) / grades_count
         result_ = f'Имя: {self.name}\nФамилия: {self.surname}\nСредняя оценка за лекции: {self.average_rating}'
         return result_
-    #def show(self):
-        #print(f"Имя: {self.name} Фамилия: {self.surname} Средняя оценка за лекции: {self.average}")
 
     def __lt__(self, other):
         if not isinstance(other, Lecturer):
