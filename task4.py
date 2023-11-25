@@ -140,13 +140,10 @@ print(f'Результат сравнения студентов (по сред�
 print(f'Результат сравнения лекторов (по средним оценкам за лекции): '
     f'{best_lecturer_1.name} {best_lecturer_1.surname} < {best_lecturer_2.name} {best_lecturer_2.surname} = {best_lecturer_1 > best_lecturer_2}')
 
-# Списки студентов
+# Списки студентов и лекторов
 student_list = [student_1, student_2]
-# Список лекторов
 lecturer_list = [best_lecturer_1, best_lecturer_2]
-
 # функция для подсчета средней оценки за домашку
-
 def student_rating(student_list, course_name):
   sum_all = 0
   count_all = 0
